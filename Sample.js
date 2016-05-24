@@ -3,14 +3,16 @@ var AlgorismSample = {
 		var rows = matrix.length, cols = matrix[0].length;
 		var y = rows - 1, x = 0, result = -1;
 
-		if (matrix[x][y] === num) {
-			return 0;
-		}
-		else if (matrix[x][y] > num) {
-			y--;
-		}
-		else if (matrix[x][y] < num) {
-			x++;
+		while (x < cols && y >= 0) {
+			if (matrix[x][y] === num) {
+				return 0;
+			}
+			else if (matrix[x][y] > num) {
+				y--;
+			}
+			else if (matrix[x][y] < num) {
+				x++;
+			}	
 		}
 
 		return -1;
